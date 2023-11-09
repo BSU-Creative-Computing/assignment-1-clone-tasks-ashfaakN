@@ -1,0 +1,172 @@
+/* Set margins of the body to center it in the viewport */
+body {
+    margin-top: auto ;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+/* Define a mixin to center elements using flexbox */
+@mixin center-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for a centered box with a background color */
+.box1 {
+    @include center-element;
+    height: 300px;
+    background-color: #8ccff7;
+}
+
+/* Style for an image with centered positioning and specific dimensions */
+.image {
+    @include center-element;
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    background-image: url(https://via.placeholder.com/400);
+}
+
+/* Container for a column layout */
+.box2{
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+}
+
+/* Styling for items with hover effect */
+.item{
+    &:hover {
+        background-color: #444; /* Hover color */
+    }
+}
+
+/* Styling for individual items with different background colors */
+.item1{
+    background-color: #4e89ae;
+    padding: 20px;
+}
+
+.item2{
+    background-color: #43658b ;
+    padding: 20px;
+}
+
+.item3{
+    background-color: #ed6663;
+    padding: 20px;
+}
+
+.item4{
+    background-color: #ffa372;
+    padding: 20px;
+}
+
+/* Styling for a centered container with padding */
+.box3{
+    @include center-element;
+    padding: 2%;
+}
+
+/* Styling for a circular element with hover effect */
+.circle {
+    @include center-element;
+    width: 100px;
+    height: 100px;
+    background-color: #4e89ae;
+    margin: 10px;
+    
+    &:hover {
+        background-color: #444; /* Hover color */
+    }
+}
+
+/* Different sizes of circular elements with varying background colors */
+.circle1{
+    border-radius: 70px;
+    width: 70px;
+    height: 70px;
+    background-color: #4e89ae;
+}
+
+.circle2{
+    border-radius: 80px;
+    width: 80px;
+    height: 80px;
+    background-color: #43658b ;
+}
+
+.circle3{
+    border-radius: 90px;
+    width: 90px;
+    height: 90px;
+    background-color: #ed6663;
+}
+
+.circle4{
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    background-color: #ffa372;
+}
+
+/* Styling for a footer with centered positioning */
+footer {
+    @include center-element;
+    height: 50px;
+    background-color: #8ccff7;
+}
+
+/* Media query for smaller screens (max-width: 800px) */
+@media (max-width: 800px) {
+    .image {
+        @include center-element;
+        height: 250px;
+        width: 250px;
+        background-size: cover;
+        background-image: url(https://via.placeholder.com/300);
+    }
+    .box1 {
+        @include center-element;
+        height: 250px;
+        background-color: #8ccff7;
+    }
+    footer {
+        @include center-element;
+        height: 50px;
+        background-color: #8ccff7;
+        margin-bottom: auto;
+    }
+}
+
+/* Media query for smaller screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .image {
+        @include center-element;
+        height: 200px;
+        width: 200px;
+        background-size: cover;
+        background-image: url(https://via.placeholder.com/200);
+    }
+    .box1 {
+        @include center-element;
+        height: 200px;
+        background-color: #8ccff7;
+    }
+    footer {
+        @include center-element;
+        height: 50px;
+        background-color: #8ccff7;
+        margin-bottom: auto;
+    }
+}
+
+/* Media query for smaller screens (max-width: 620px) */
+@media (max-width: 620px) {
+    .box3 {
+        @include center-element;
+        flex-direction: column;
+    }
+}

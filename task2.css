@@ -1,0 +1,211 @@
+/* Set font, margin, and flex properties for body */
+body {
+    font-family: sans-serif;
+    margin: 0%;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Set contents in columns */
+    background-color: rgb(234, 234, 234);
+}
+
+/* Styling for the header section */
+header {
+    color: white; /* Text color */
+    background-color: rgb(52, 157, 249); /* Background color */
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Add space between elements */
+    align-items: center; /* Align items to the center */
+    width: 100%; /* Set width to 100% */
+}
+
+/* Styling for the logo within the header */
+.logo {
+    padding-left: 20px; /* Add left padding to the logo */
+}
+
+/* Styling for the search bar within the header */
+.search {
+    display: flex; /* Use flexbox */
+    justify-content: left; /* Align text inside search to the left */
+    align-items: center; /* Align text center vertically */
+    width: 250px; /* Set width of the search bar */
+    height: 30px; /* Set height of the search bar */
+    color: rgba(0, 0, 0, 0.502); /* Text color */
+    border: 1px solid black; /* Border color */
+    background-color: white; /* Background color of the search bar */
+    padding-left: 1%; /* Add left padding to the search bar */
+}
+
+/* Styling for navigation links */
+nav a {
+    text-decoration: none; /* Remove underline from navigation links */
+    padding-right: 20px; /* Add space to the right of navigation links */
+    color: rgb(255, 255, 255); /* Navigation text color */
+}
+
+/* Styling for the main content section */
+main {
+    margin: 0% auto; /* Center the container horizontally */
+    margin-top: 30px; /* Add top margin */
+    display: grid; /* Use grid layout */
+    gap: 10px; /* Set gap between grid items */
+    grid-template-columns: 310px repeat(3, 230px); /* Set column layout */
+}
+
+/* Styling for paragraphs */
+p {
+    font-size: 15px; /* Set font size */
+    color: rgba(0, 0, 0, 0.808); /* Font color */
+    line-height: 20px; /* Set gap between lines */
+}
+
+/* Styling for boxes */
+.box {
+    background-color: white;
+    border: 2px solid rgba(201, 201, 201, 0.276); /* Border */
+    padding: 20px; /* Add padding to the boxes for spacing */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Set contents in columns */
+    border-radius: 1%; /* Add curve edges to the box border */
+    box-shadow: 2px 2px 2px rgb(201, 201, 201); /* Add shadow effect to the boxes */
+}
+
+/* Specific styling for box1 */
+.box1 {
+    padding: 0%;
+    grid-column: span 2; /* Span over two columns */
+    grid-row: span 2; /* Span over two rows */
+    height: fit-content;
+}
+
+/* Styling for text within box1 */
+#text1 {
+    margin: 10px; /* Add margin */
+}
+
+/* Styling for images within boxes */
+.box img {
+    margin: 0%;
+    object-fit: contain; /* Make every image fit inside the box */
+    height: 100%; /* Set image to max height */
+    width: 100%; /* Set image to max width */
+}
+
+/* Styling for buttons */
+#button {
+    font-size: 14px;
+    height: 30px; /* Set height for the button */
+    width: 100px; /* Set width of the button */
+    background-color: rgb(52, 157, 249); /* Background color of the button */
+    color: white; /* Text color */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Align text inside button to the center */
+    align-items: center; /* Align text inside button to center vertically */
+    border-radius: 8%; /* Add border-radius for rounded corners */
+}
+
+/* Styling for the button container */
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Align the button to the right within the button container */
+    margin: 10px; /* Adjust the margin-top to separate the button from the text */
+}
+
+/* Styling for the footer */
+footer {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding-top: 90px; /* Add top padding */
+    padding-bottom: 30px; /* Add bottom padding */
+}
+
+@media screen and (max-width: 480px) {
+    main{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .box{
+        grid-column: span 1;
+    }
+
+    .navigation{
+        display: none;
+    }
+
+    .search{
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 800px){
+    main{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .box{
+        grid-row: span 2;
+    }
+
+    .navigation{
+        display: none;
+    }
+
+    .search{
+        display: none;
+    }
+    
+}
+
+@media screen and (min-width: 801px) and (max-width: 1024px){
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    main{
+        width: auto;
+        margin: 10px;
+        grid-template-columns: 310px repeat(2, 230px);
+        grid-template-rows: auto;
+        
+    }
+
+
+    .box1{
+        height: auto;
+        grid-row: span 5; 
+    }
+    
+    
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px){
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    main{
+        width: auto;
+        margin: 10px;
+        grid-template-columns: 310px repeat(3, 230px);
+        grid-template-rows: auto;
+        
+    }
+
+
+    .box1{
+        height: auto;
+        grid-row: span 2; 
+        grid-column: span 2;
+    }
+    
+    
+}
